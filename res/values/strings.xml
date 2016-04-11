@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PuyinApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string name="footbar_text_home">首页</string>
+    <string name="footbar_text_sort">分类</string>
+    <string name="footbar_text_shoppingcart">购物车</string>
+    <string name="footbar_text_mime">我的</string>
+</resources>

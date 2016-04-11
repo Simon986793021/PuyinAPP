@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" 
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:id="@+id/layout_footer"
+    android:background="@color/main_footer_bg"
+    android:gravity="center_vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/group"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/foot_bar_home"
+            style="@style/main_footbar_radio"
+            android:text="@string/footbar_text_home"
+            android:drawableTop= "@drawable/footbar_home"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/foot_bar_sort"
+            style="@style/main_footbar_radio"
+            android:text="@string/footbar_text_sort"
+            android:drawableTop="@drawable/footbar_sort" />
+        <RadioButton
+            android:id="@+id/foot_bar_shoppingcart"
+            style="@style/main_footbar_radio"
+            android:text="@string/footbar_text_shoppingcart"
+            android:drawableTop="@drawable/footbar_shoppingcart"/>
+        <RadioButton
+            android:id="@+id/foot_bar_my"
+            style="@style/main_footbar_radio"
+            android:text="@string/footbar_text_mime"
+            android:drawableTop="@drawable/footbar_my"/>
+    </RadioGroup>
+
+</LinearLayout>
