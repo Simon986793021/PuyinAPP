@@ -45,7 +45,7 @@ public class HomePageFragment extends BaseFragment implements
     private final String[] Sp_Texts = { "银饰-项链推荐款", "银饰-手镯推荐款", "银饰-耳环推荐款",
             "银饰-戒指推荐款", };
     // GridView的数据源
-    private final String[] Texts = { "银饰", "银礼", "珠宝", "打金工具" };
+    private final String[] Texts = { "项链", "戒指", "耳饰", "珠宝" };
     private final int[] Images = { R.drawable.silver1, R.drawable.silver2,
             R.drawable.silver3, R.drawable.silver4, };
     // GridView2的数据源
