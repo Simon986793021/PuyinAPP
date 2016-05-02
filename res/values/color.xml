@@ -6,4 +6,7 @@
     <color name="footer_text_color_normal">#343434</color>
     <color name="footer_text_color_selected">#e02a0d</color>
     <color name="sort_text_color">#00EE00</color>
+    
+    <color name="black">#000000</color>
+    <color name="green">#11cd6e</color>
 </resources>

@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center_vertical|center_horizontal"
-            android:text="银饰"
+            android:text="戒指"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 

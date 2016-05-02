@@ -21,9 +21,9 @@ import android.widget.Spinner;
 import com.alpha.extra.HomeBanner;
 import com.alpha.puyinapp.R;
 import com.alpha.puyinapp.activity.JewelryActivity;
-import com.alpha.puyinapp.activity.SilverActivity;
-import com.alpha.puyinapp.activity.SilvergiftActivity;
-import com.alpha.puyinapp.activity.ToolActivity;
+import com.alpha.puyinapp.activity.NecklaceActivity;
+import com.alpha.puyinapp.activity.RingActivity;
+import com.alpha.puyinapp.activity.EarringActivity;
 import com.alpha.puyinapp.base.BaseFragment;
 
 /**
@@ -45,7 +45,7 @@ public class HomePageFragment extends BaseFragment implements
     private final String[] Sp_Texts = { "银饰-项链推荐款", "银饰-手镯推荐款", "银饰-耳环推荐款",
             "银饰-戒指推荐款", };
     // GridView的数据源
-    private final String[] Texts = { "项链", "戒指", "耳饰", "珠宝" };
+    private final String[] Texts = { "项链", "戒指", "珠宝", "耳饰" };
     private final int[] Images = { R.drawable.silver1, R.drawable.silver2,
             R.drawable.silver3, R.drawable.silver4, };
     // GridView2的数据源
@@ -152,11 +152,11 @@ public class HomePageFragment extends BaseFragment implements
         // TODO Auto-generated method stub
         switch (Images[position]) {
         case R.drawable.silver1:
-            startActivity(new Intent(getActivity(), SilverActivity.class));
+            startActivity(new Intent(getActivity(), NecklaceActivity.class));
 
             break;
         case R.drawable.silver2:
-            startActivity(new Intent(getActivity(), SilvergiftActivity.class));
+            startActivity(new Intent(getActivity(), RingActivity.class));
 
             break;
         case R.drawable.silver3:
@@ -164,7 +164,7 @@ public class HomePageFragment extends BaseFragment implements
 
             break;
         case R.drawable.silver4:
-            startActivity(new Intent(getActivity(), ToolActivity.class));
+            startActivity(new Intent(getActivity(), EarringActivity.class));
 
             break;
 

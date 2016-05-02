@@ -1,4 +1,7 @@
-package com.alpha.puyinapp.activity;
+/**
+ * 
+ */
+package com.alpha.puyinapp.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,34 +15,46 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.widget.ListView;
 
 import com.alpha.adapter.MyBaseAdapter;
-import com.alpha.puyinapp.R;
-import com.alpha.puyinapp.util.NewsBean;
+import com.alpha.puyinapp.activity.NecklaceActivity;
 
 /**
  * @author Simon
- * @category银饰界面 2016/3/6
- * 
  */
-public class SilverActivity extends Activity {
-    private ListView listView;
-    private static String URL = "http://www.puyinwang.com/Puyin/common/good!listByProperty.shtml?type1=1";
+public class MyAsyncTask extends AsyncTask<String, Void, List<NewsBean>> {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.silver);
-        listView = (ListView) findViewById(R.id.lv_silver);
-        new MyAsyncTask().execute(URL);
+    private final ListView listView;
+    private final Context context;
+
+    public MyAsyncTask(ListView listView, Context context) {
+        this.listView = listView;
+        this.context = context;
     }
 
     /*
+     * (non-Javadoc)
+     * 
+     * @see android.os.AsyncTask#doInBackground(java.lang.Object[])
+     */
+    @Override
+    protected List<NewsBean> doInBackground(String... params) {
+        List<NewsBean> list = null;
+        try {
+            list = getJsonData(params[0]);
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /*
+     * 
+     * 
      * 将url对应的json格式数据转化为我们所封装的newbean对象
      */
     private List<NewsBean> getJsonData(String url) throws JSONException {
@@ -111,40 +126,13 @@ public class SilverActivity extends Activity {
 
     }
 
-    /*
-     * 异步加载
-     */
-    class MyAsyncTask extends AsyncTask<String, Void, List<NewsBean>> {
+    @Override
+    protected void onPostExecute(List<NewsBean> result) {
+        // TODO Auto-generated method stub
+        super.onPostExecute(result);
+        MyBaseAdapter myBaseAdapter = new MyBaseAdapter(context, result);
+        listView.setAdapter(myBaseAdapter);
 
-        /*
-         * 
-         * asyncTask 必须重写的方法，在子线程中运行，耗时操作在这里处理
-         */
-        @Override
-        protected List<NewsBean> doInBackground(String... params) {
-            // TODO Auto-generated method stub
-            List<NewsBean> list = null;
-            try {
-                list = getJsonData(params[0]);
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            return list;
-        }
-
-        /*
-         * 最后默认执行的 将doInBackground返回的参数进行处理
-         */
-        @Override
-        protected void onPostExecute(List<NewsBean> result) {
-            // TODO Auto-generated method stub
-            super.onPostExecute(result);
-            MyBaseAdapter myBaseAdapter = new MyBaseAdapter(
-                    SilverActivity.this, result);
-            listView.setAdapter(myBaseAdapter);
-
-        }
     }
 
 }

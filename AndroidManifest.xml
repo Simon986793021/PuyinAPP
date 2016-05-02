@@ -29,6 +29,8 @@
         <activity 
             android:name=".activity.LoginActivity">
         </activity>
+        <activity android:name=".activity.S9999Activity">
+        </activity>
         <activity 
             android:name=".activity.MyOrderActivity"></activity>
         <activity 
@@ -44,16 +46,16 @@
             android:name=".activity.RegisterActivity">
         </activity>
         <activity 
-            android:name=".activity.SilverActivity">
+            android:name=".activity.NecklaceActivity">
             </activity>
          <activity
-             android:name=".activity.ToolActivity">
-         </activity>
-         <activity
-             android:name=".activity.SilvergiftActivity">
+             android:name=".activity.EarringActivity">
          </activity>
          <activity
              android:name=".activity.JewelryActivity">
+         </activity>
+         <activity
+             android:name=".activity.RingActivity">
          </activity>
          <activity
              android:name=".activity.OrderListActivity">
